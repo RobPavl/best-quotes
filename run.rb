@@ -7,8 +7,9 @@ require 'sinatra'
 
 ActiveRecord::Base.configurations["mydatabase"] = YAML::load(File.open('database.yml'))
 
-class Quotations < ActiveRecord::Base
-  set_table_name "quotations"
+class Quote < ActiveRecord::Base
+  #set_table_name "quotes"
+  self.table_name = 'quotes'
   establish_connection "mydatabase"
 end
 
@@ -19,5 +20,5 @@ get '/' do
 end
 
 get '/quotations' do
-  Quotations.all
+  Quote.all.to_json
 end
