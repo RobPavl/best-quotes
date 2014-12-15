@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
   <title>Золотые розсыпи</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="gold-placers.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
   <script src="jquery-2.1.1.min.js"></script>
   <script src="gold-placers.js"></script>
 </head>
 <body>
 
-<h1>Gold Placers</h1>
-<form id='addNew'>
-  <h3 class="dobZit">Добавить цитату</h3>
-   <p class="avtor">Автор: <input id="new-author" name="author" type="text"> </p>
-   <p class="tvir">Произведение: <input id="new-sourse" name="sourse" type="text"> </p>
-   <p>Цитата:</p>
-   <textarea id="new-phrase" name="phrase"></textarea>
+<h1 class="text-center">Gold Placers</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <blockquote>
+          <p id="dictum">Очень красивая и вдохновляющая фраза.</p>
+            <footer id='author'>Какой-то известный или неочень человек
+              <cite id="source">"Литературное произведение"</cite>
+            </footer>
+        </blockquote>
+      </div>
+      <div class="col-md-3">
+        <p><h3>Добавить новую цитату:</h3></p>
+        <p><input type="text" class="form-control" placeholder="Автор" id='creator'></p>
+        <p><input type="text" class="form-control" placeholder="Из какого произведения" id="origin"></p>
+        <p><textarea rows="3" placeholder="Цитата..." id="citate"></textarea></p>
+        <button type="button" class="btn btn-success active" id='add'>Добавить цитату</button>
+      </div>
+    </div>
+  </div>
 
-   <p>Выбрать язык:
-   <select>
-    <option>Русский</option>
-    <option>Українська</option>
-   </select></p>
-   <p class="adBut"><button id="adAllThis">Добавить цитату</button></p>
-</form>
 
-<div id='old-phrases'></div>
 
 </body>
 </html>
